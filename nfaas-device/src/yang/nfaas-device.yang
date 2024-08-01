@@ -1,0 +1,41 @@
+module nfaas-device {
+  namespace "http://example.com/nfaas-device";
+  prefix nfaas-dev;
+  yang-version 1.1;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+  import nfaas-fabric {
+    prefix nfaas-fab;
+  }
+
+  description "Device management for NFaaS";
+  revision 2024-07-29 {
+    description "Device management service.";
+  }
+
+  augment "/ncs:services/nfaas-fab:fabric" {
+    list device {
+      key "name";
+      description "List of devices in the fabric";
+      leaf name {
+        type string;
+        description "Name of the device";
+      }
+      leaf address {
+        type inet:ipv4-address;
+        description "Management IP address of the device";
+      }
+      leaf ned-id {
+        type string;
+        description "NED ID of the device";
+      }
+      uses ncs:service-data;
+      ncs:servicepoint device-servicepoint;
+    }
+  }
+}

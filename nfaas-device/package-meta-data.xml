@@ -1,13 +1,13 @@
 <ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
-  <name>nfaas_device</name>
+  <name>nfaas-device</name>
   <package-version>1.0</package-version>
   <description>Generated Python package</description>
   <ncs-min-version>6.2</ncs-min-version>
 
   <component>
-    <name>nfaas</name>
+    <name>nfaas-device</name>
     <application>
-      <python-class-name>nfaas_device.nfaas.NfaasDevice</python-class-name>
+      <python-class-name>nfaas_device.nfaas_device.NfaasDevice</python-class-name>
     </application>
   </component>
 </ncs-package>

@@ -1,0 +1,33 @@
+module nfaas-fabric {
+  namespace "http://example.com/nfaas-fabric";
+  prefix nfaas-fab;
+  yang-version 1.1;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description "Fabric management for NFaaS";
+  revision 2024-07-29 {
+    description "Fabric management service.";
+  }
+
+  augment "/ncs:services" {
+    list fabric {
+      key "name";
+      description "List of fabrics";
+      leaf name {
+        type string;
+        description "Unique name of the fabric";
+      }
+      uses ncs:service-data;
+      ncs:servicepoint fabric-servicepoint;
+    }
+  }
+}

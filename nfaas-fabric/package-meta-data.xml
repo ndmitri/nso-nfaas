@@ -1,13 +1,13 @@
 <ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
-  <name>nfaas_fabric</name>
+  <name>nfaas-fabric</name>
   <package-version>1.0</package-version>
   <description>Generated Python package</description>
   <ncs-min-version>6.2</ncs-min-version>
 
   <component>
-    <name>nfaas</name>
+    <name>nfaas-fabric</name>
     <application>
-      <python-class-name>nfaas_fabric.nfaas.NfaasFabric</python-class-name>
+      <python-class-name>nfaas_fabric.nfaas_fabric.NfaasFabric</python-class-name>
     </application>
   </component>
 </ncs-package>
